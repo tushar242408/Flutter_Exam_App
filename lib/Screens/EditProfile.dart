@@ -29,6 +29,11 @@ class _EditProfileState extends State<EditProfile> {
       "gender":widget.m.Gender,
       "college":widget.m.Colleagename,
       "qualification":widget.m.educationQual,
+      "giventest":[],
+      "test":[],
+      "assignedtest":["j8AZuejY3htVE5jDMSe1"],
+      "Friend":[],
+      "bookmark":[],
 
     };
     documentReference.set(l, SetOptions(merge: true)).then((value) => print("done"));

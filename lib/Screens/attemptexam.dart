@@ -95,6 +95,12 @@ class _AttemptexamState extends State<Attemptexam> {
       return Colors.black;
   }
   @override
+  void dispose() {
+    _timer.cancel();
+    // TODO: implement dispose
+    super.dispose();
+  }
+  @override
   void initState() {
     startTimer(30);
     getQue();
@@ -232,7 +238,6 @@ class _AttemptexamState extends State<Attemptexam> {
                      cor=false;
                      print (correct);
                     if(submit==false){
-                      _timer.cancel();
                       aaddata();
                     }
                     if(_questionno>q.length-1){
@@ -272,6 +277,13 @@ class _AttemptexamState extends State<Attemptexam> {
                           onTap: (){
                             print(index);
                             _questionno=index+1;
+
+                            if(_questionno>q.length-1){
+                              submit=false;
+                            }
+                            else{
+                              submit=true;
+                            }
                             setState(() {
 
                             });

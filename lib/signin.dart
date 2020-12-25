@@ -34,7 +34,7 @@ class reg{
   }
 
   signout() async {
-    User user = await auth.currentUser;
+    var user = await auth.signOut();
     //user.unlink(id);
 
   }

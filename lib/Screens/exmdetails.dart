@@ -168,11 +168,13 @@ about.length!=0?Column(
 
 
           SizedBox(height: w*20,),
-          button(text: attemp?"REATTEMPT  EXAM":"ATTEMPT EXAM",width: w*50,txtcolor: Colors.white,height: w*10,ontap:(){   Navigator.push(
-    context,
-    MaterialPageRoute(
-    builder: (context) => Attemptexam(widget.e.tid)));
-  },)
+          button(text:attemp?"Already attempt": "ATTEMPT EXAM",width: w*50,txtcolor: Colors.white,height: w*10,Col: attemp?Colors.grey:Colors.black,ontap:(){
+            if(!attemp) {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => Attemptexam(widget.e.tid)));
+            }},)
         ],
       ),
     );

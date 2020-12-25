@@ -16,7 +16,7 @@ import 'login.dart';
 
 class Dashboard extends StatefulWidget {
   final String user;
-  const Dashboard({Key key, this.user="P0wStF5AAiOVVrt6Dh9XAIiKUOl2"}) : super(key: key);
+  const Dashboard({Key key, this.user}) : super(key: key);
   @override
   _DashboardState createState() => _DashboardState();
 }
@@ -40,6 +40,7 @@ class _DashboardState extends State<Dashboard> {
     mydata.educationQual=a.data()["qualification"];
     mydata.test= await a.data()['test'];
     getexamdata(d:mydata.assigntest);
+    print(mydata);
     setState(() {});
   }
   List<Exam> data = new List<Exam>();
@@ -174,7 +175,7 @@ class _DashboardState extends State<Dashboard> {
                            Navigator.push(
                                context,
                                MaterialPageRoute(
-                                   builder: (context) => Assignedtest(data:data)));
+                                   builder: (context) => Assignedtest(data:data,mydata: mydata,)));
                          },), SizedBox(height: w*4),
 
 
